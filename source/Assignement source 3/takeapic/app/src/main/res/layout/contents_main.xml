@@ -9,7 +9,7 @@
         android:hint="First Name"
         android:ems="10"
         android:id="@+id/txt_fname"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -20,7 +20,7 @@
         android:hint="last Name"
         android:ems="10"
         android:id="@+id/txt_lname"
-        android:layout_below="@+id/txt_fname"
+        android:layout_above="@+id/txt_uname"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -31,7 +31,7 @@
         android:hint="Username"
         android:ems="10"
         android:id="@+id/txt_uname"
-        android:layout_below="@+id/txt_lname"
+        android:layout_above="@+id/txt_pword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -42,7 +42,7 @@
         android:hint="Password"
         android:ems="10"
         android:id="@+id/txt_pword"
-        android:layout_below="@+id/txt_uname"
+        android:layout_above="@+id/editText5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -53,7 +53,7 @@
         android:hint="Address"
         android:ems="10"
         android:id="@+id/editText5"
-        android:layout_below="@+id/txt_pword"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -87,6 +87,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="93dp"
         android:onClick="signup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sign Up"
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/txt_lname" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make sure you fill all the fields"
+        android:id="@+id/error"
+        android:visibility="invisible"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/btn_signup"
+        android:layout_alignRight="@+id/btn_pic"
+        android:layout_alignEnd="@+id/btn_pic"
+        android:textColor="#f90404" />
 
 
 </RelativeLayout>

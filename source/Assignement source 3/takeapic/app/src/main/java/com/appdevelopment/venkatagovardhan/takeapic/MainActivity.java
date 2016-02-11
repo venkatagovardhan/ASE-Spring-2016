@@ -25,27 +25,21 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.contents_main);
-
-
-
-        Button capture = (Button) findViewById(R.id.btn_pic);
+        Button b= (Button) findViewById(R.id.btn_pic);
+        Button capture = (Button) findViewById(R.id.btn_camera);
         userImage = (ImageView) findViewById(R.id.imageView2);
-
-        capture.setOnClickListener(new View.OnClickListener() {
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
+                startActivity(new Intent(MainActivity.this, popup.class));
             }
         });
+
+
     }
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == TAKE_PHOTO_CODE && resultCode == RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            userImage.setImageBitmap(photo);
-            Log.d("CameraDemo", "Pic saved");
-        }
-    }
+
+
+
 
 
 
@@ -55,12 +49,38 @@ public class MainActivity extends AppCompatActivity{
 
     public void signup(View v)
     {
+        EditText firstnameCtrl = (EditText)findViewById(R.id.txt_fname);
+        EditText lastnameCtrl = (EditText) findViewById(R.id.txt_lname);
+        EditText usernameCtrl = (EditText)findViewById(R.id.txt_uname);
+        EditText passwordCtrl = (EditText) findViewById(R.id.txt_pword);
+        EditText addressCtrl = (EditText)findViewById(R.id.editText5);
 
+        TextView errorText = (TextView)findViewById(R.id.error);
+        String userName = usernameCtrl.getText().toString();
+        String password = passwordCtrl.getText().toString();
+        String firstName = firstnameCtrl.getText().toString();
+        String lastName = lastnameCtrl.getText().toString();
+        String address = addressCtrl.getText().toString();
+
+        boolean validationFlag = false;
+        //Verify if the username and password are not empty.
+        if(!userName.isEmpty() && !password.isEmpty() && !firstName.isEmpty() && !lastName.isEmpty() && !address.isEmpty()) {
+
+                validationFlag = true;
+
+
+        }
+        if(!validationFlag)
+        {
+            errorText.setVisibility(View.VISIBLE);
+        }
+        else
+        {
             //This code redirects the from login page to the home page.
             Intent redirect = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(redirect);
 
-
+        }
 
     }
 
