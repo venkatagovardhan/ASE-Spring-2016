@@ -9,19 +9,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
  
-@Path("/ktomservice")
+@Path("/mtokservice")
 public class MtoK {
 
 
 	@GET
 	@Produces("application/xml")
-	public String convertCtoF() {
+	public String convertMtoK() {
  
 		Double kilometers;
 		Double miles = 36.8;
 		kilometers = (miles * 1.61) ;
  
-		String result = "@Produces(\"application/xml\") Output: \n\nC to F Converter Output: \n\n" + kilometers;
+		String result = "@Produces(\"application/xml\") Output: \n\nM to K Converter Output: \n\n" + kilometers;
 		return "<ktomservice>" + "<miles>" + miles + "</miles>" + "<ktomoutput>" + result + "</ktomoutput>" + "</ktomservice>";
 	}
  
@@ -33,7 +33,7 @@ public class MtoK {
 		Double miles = m;
 		kilometers = (miles *1.61);
  
-		String result = "@Produces(\"application/xml\") Output: \n\nC to F Converter Output: \n\n" + kilometers;
+		String result = "@Produces(\"application/xml\") Output: \n\nM to K Converter Output: \n\n" + kilometers;
 		return "<ktomservice>" + "<miles>" + miles + "</miles>" + "<ktomoutput>" + result + "</ktomoutput>" + "</ktomservice>";
 	}
 }
