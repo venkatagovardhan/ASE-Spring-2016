@@ -8,9 +8,9 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -99,12 +99,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             ex.printStackTrace();        }
         //Setting our image as the marker icon.
-        mMap.addMarker(new MarkerOptions().position(userCurrentLocationCoordinates)
+       /* mMap.addMarker(new MarkerOptions().position(userCurrentLocationCoordinates)
                 .title("Your current address.").snippet(userAddress.toString())
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.photo)));
         //Setting the zoom level of the map.
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userCurrentLocationCoordinates, 7));*/
+
+        mMap.addMarker(new MarkerOptions().position(userCurrentLocationCoordinates)
+                .title("Your current address.")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.photo)));
+        //Setting the zoom level of the map.
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userCurrentLocationCoordinates, 7));
-
-
     }
 }
