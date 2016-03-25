@@ -1,0 +1,68 @@
+<html ng-app="register">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="angular.min.js"></script>
+  <script src="RegistrationSaving.js"></script>
+
+  <title>Registration</title>
+  <h1><font color="#fff8dc">Register</font></h1>
+</head>
+<body class="wrap" background="Background.jpg" ng-controller="RegistrationController">
+<div id="tablestyle">
+  <table>
+    <tr>
+      <td>
+        <font color="#d2691e"> Full Name:
+      </td>
+      <td>
+        <font color="#fff8dc"> <input type="text" id="FirstName" ng-model="first" placeholder="Enter Name"/></font>
+      </td>
+    </tr>
+    <tr>
+
+
+    </tr>
+    <tr>
+      <td>
+        <font color="#d2691e"> Email Address: </font>
+      </td>
+      <td>
+        <input type="text" id="EmaiId" ng-model="email" placeholder="Enter Email Address"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <font color="#d2691e"> Mobile Number:</font>
+      </td>
+      <td>
+        <input type="text" id="PhoneNumber" ng-model="phone" placeholder="Enter Mobile Number"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <font color="#d2691e"> UserName:</font>
+      </td>
+      <td>
+        <input type="text" id="UserName" ng-model="user" placeholder="Enter UserName"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <font color="#d2691e"> Password:</font>
+      </td>
+
+      <td>
+        <input type="password" id="Password" ng-model="pass" placeholder="Enter Password"/>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button id="Login" name="login" ng-click="SaveRegistration(first,last,email,phone,user,pass)">Sign In</button>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
